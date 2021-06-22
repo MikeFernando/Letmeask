@@ -1,8 +1,7 @@
 import { useHistory } from "react-router-dom";
-import { useCallback, useContext } from "react";
+import { useCallback } from "react";
 import { FiLogIn } from "react-icons/fi";
 
-import { auth, firebase } from "../services/firebase";
 import { Button } from "../components/Button";
 
 import illustration from "../assets/illustration.svg";
@@ -10,12 +9,18 @@ import logoImg from "../assets/logo.svg";
 import googleIconImage from "../assets/google-icon.svg";
 
 import "../styles/auth.scss";
+import { useAuth } from "../hooks/useAuth";
 
 export function Home() {
+  const { user, signInWithGoogle } = useAuth();
   const history = useHistory();
 
-  const handleCreateRoom = useCallback(() => {
-      history.push('/rooms/new')
+  const handleCreateRoom = useCallback(async() => {
+    if (!user) {
+      await signInWithGoogle();
+    }
+
+    history.push('/rooms/new');
   }, []);
 
   return (
@@ -50,5 +55,5 @@ export function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
