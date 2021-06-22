@@ -1,5 +1,3 @@
-> # CRIAÇÃO DA ESTRUTURA HTML DA PÁGINA HOME
+> # ESTILIZAÇÃO DA PÁGINA AUTH
 
-## Comentários
-
-- A importação de imagens no React é sempre pelo javascript
+![Imgur](https://imgur.com/GBQ98HL.png)

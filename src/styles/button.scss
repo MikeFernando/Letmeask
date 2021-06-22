@@ -1,0 +1,32 @@
+.enter-room {
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  height: 3.125rem;
+  background-color: #835afd;
+  border: 1px solid #835afd;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s;
+
+  &:not(:disabled):hover {
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
