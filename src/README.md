@@ -1,3 +1,3 @@
-> # ESTILIZAÇÃO DA PÁGINA AUTH
+> # ESTILIZAÇÃO DA PÁGINA NEW ROOM
 
-![Imgur](https://imgur.com/GBQ98HL.png)
+![Imgur](https://imgur.com/YPOD9mR.png)

@@ -1,4 +1,5 @@
-import { Home } from "./pages/Home";
+// import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
 
 import "./services/firebase";
 
@@ -7,7 +8,8 @@ import "./styles/global.scss";
 function App() {
   return (
    <div>
-     <Home />
+     {/* <Home /> */}
+     <NewRoom />
    </div>
   );
 }
