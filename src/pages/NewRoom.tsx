@@ -1,4 +1,5 @@
 import { FiLogIn } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import { Button } from "../components/Button";
 
@@ -23,7 +24,6 @@ export function NewRoom() {
           <img src={logoImg} alt="Letmeask" />
 
           <h2>Crie uma nova sala</h2>
-
           <form>
             <input
               type="text"
@@ -35,7 +35,10 @@ export function NewRoom() {
             </Button>
 
             <p>
-              Quer entrar em uma sala já existente? <a href="#">Clique aqui</a>
+              Quer entrar em uma sala já existente? 
+              <Link to="/">
+                <a>Clique aqui</a>
+              </Link>
             </p>
           </form>
         </div>
