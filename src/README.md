@@ -1,5 +1,8 @@
-> # CRIAÇÃO DA ESTRUTURA HTML DA PÁGINA HOME
+> # ESTILOS GLOBAIS
 
 ## Comentários
 
-- A importação de imagens no React é sempre pelo javascript
+- Arquivos CSS podem ser importados em qualquer outro arquivo
+- instalação do sass versão sass@^5.0.0 (porque versão 6 ainda não é suportada
+  pelo CRA)
+- Estilização global
