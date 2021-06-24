@@ -1,5 +1,9 @@
+import { useCallback, useState, FormEvent } from "react";
 import { FiLogIn } from "react-icons/fi";
+import { Link, useHistory } from "react-router-dom";
 
+import { database } from "../services/firebase";
+import { useAuth } from "../hooks/useAuth";
 import { Button } from "../components/Button";
 
 import illustration from "../assets/illustration.svg";
@@ -8,6 +12,27 @@ import logoImg from "../assets/logo.svg";
 import "../styles/new-room.scss";
 
 export function NewRoom() {
+  const history = useHistory();
+  const { user } = useAuth();
+  const [ newRoom, setNewRoom ] = useState('');
+
+  const handleCreateRoom = useCallback(async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if(newRoom.trim() === '') {
+      return;
+    }
+
+    const roomRef = database.ref('rooms');
+
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorId: user?.id,
+    });
+
+    history.push(`/rooms/${firebaseRoom.key}`);
+  }, [ newRoom ]);
+
   return (
     <div id="page-new-room">
       <aside>
@@ -23,11 +48,13 @@ export function NewRoom() {
           <img src={logoImg} alt="Letmeask" />
 
           <h2>Crie uma nova sala</h2>
-
-          <form>
+          
+          <form onSubmit={handleCreateRoom}>
             <input
               type="text"
               placeholder="Nome da sala"
+              onChange={event => setNewRoom(event.target.value)}
+              value={newRoom}
             />
             <Button type="submit">
               <FiLogIn />
@@ -35,7 +62,10 @@ export function NewRoom() {
             </Button>
 
             <p>
-              Quer entrar em uma sala já existente? <a href="#">Clique aqui</a>
+              Quer entrar em uma sala já existente? 
+              <Link to="/">
+                <a>Clique aqui</a>
+              </Link>
             </p>
           </form>
         </div>
