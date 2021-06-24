@@ -1,3 +1,7 @@
-> # AULA 2
+> # CRIAÇÃO DE SALA ENTRADA E VERIFICAÇÃO
 
-![Imgur](https://imgur.com/dtI7Ytt.gif)
+## COMMIT
+
+- Criação de uma sala no firebase
+- Verificação do código fornecido para entrar na sala
+- Redirecionamento para sala

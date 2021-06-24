@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useEffect, useState, useContext } from "react";
+import { createContext, ReactNode, useCallback, useEffect, useState } from "react";
 
 import { auth, firebase } from "../services/firebase";
 
