@@ -31,7 +31,7 @@ export function NewRoom() {
     });
 
     history.push(`/rooms/${firebaseRoom.key}`);
-  }, [ newRoom ]);
+  }, [ newRoom, history, user?.id ]);
 
   return (
     <div id="page-new-room">
@@ -64,7 +64,7 @@ export function NewRoom() {
             <p>
               Quer entrar em uma sala já existente? 
               <Link to="/">
-                <a>Clique aqui</a>
+                <a href="/">Clique aqui</a>
               </Link>
             </p>
           </form>
